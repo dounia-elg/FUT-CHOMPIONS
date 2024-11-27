@@ -131,3 +131,19 @@ body {
   top: 25%;
   left: 57%;
 }
+
+.sub1,
+.sub2,
+.sub3,
+.sub4,
+.sub5,
+.sub6 {
+  position: static;
+  width: 80px;
+  height: 80px;
+  border-radius: 15%;
+  background-color: #444;
+  background-image: url(imgs/000.png);
+  background-size: cover;
+  border: 2px solid #fff;
+}
