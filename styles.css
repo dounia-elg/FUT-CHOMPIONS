@@ -26,3 +26,15 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.logo {
+  
+  width: 160px;
+  height: 40px;
+  position: relative;
+}
+
+.name-logo {
+  font-size: 25px;
+  color: rgb(239, 65, 65);
+}
