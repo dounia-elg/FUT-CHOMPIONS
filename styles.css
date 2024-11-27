@@ -16,3 +16,13 @@ body {
   z-index: 500;
 }
 
+.header {
+  height: 40px;
+  width: auto;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
