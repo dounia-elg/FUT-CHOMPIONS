@@ -23,3 +23,6 @@ body {
 }
 
 
+.main-content {
+  display: flex;
+}
