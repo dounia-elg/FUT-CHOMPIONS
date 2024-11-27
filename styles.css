@@ -60,3 +60,74 @@ body {
 .sidebar .player-card {
   margin: 10px auto;
 }
+
+.player-card {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  background-color: #333;
+  background-image: url(imgs/000.png);
+  background-size: cover;
+  border: 2px  #fff;
+}
+
+
+.goal {
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.defender1 {
+  top: 70%;
+  left: 10%;
+}
+
+.defender2 {
+  top: 70%;
+  left: 30%;
+}
+
+.defender3 {
+  top: 70%;
+  left: 57%;
+}
+
+.defender4 {
+  top: 70%;
+  left: 77%;
+}
+
+
+.midfielder1 {
+  top: 50%;
+  left: 10%;
+}
+
+.midfielder2 {
+  top: 50%;
+  left: 30%;
+}
+
+.midfielder3 {
+  top: 50%;
+  left: 57%;
+}
+
+.midfielder4 {
+  top: 50%;
+  left: 77%;
+}
+
+
+.stirker1 {
+  top: 25%;
+  left: 30%;
+}
+
+.stirker2 {
+  top: 25%;
+  left: 57%;
+}
