@@ -49,3 +49,35 @@ body {
   width: 280px;
   position: relative;
 }
+
+.players {
+  background-image: url(imgs/stadium\ black.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  
+  margin-left: 50px;
+  margin-top: 70px;
+
+  position: relative;
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+
+.players .player-card-container{
+  position: absolute;
+  margin-left: -72px;
+  margin-bottom: -82;
+  z-index: 1;
+}
+
+.player-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 144px;
+  user-select: none;
+  position: relative;
+  border: 2px solid transparent;
+  transition: transform 50ms ease-in-out;
+
+}
