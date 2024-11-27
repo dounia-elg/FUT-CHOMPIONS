@@ -38,3 +38,9 @@ body {
   font-size: 25px;
   color: rgb(239, 65, 65);
 }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
