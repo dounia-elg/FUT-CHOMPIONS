@@ -1,0 +1,18 @@
+body {
+  padding: 0px 0px 126px;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header-container {
+  width: 100%;
+  background-color: #fafafa;
+  border-bottom: 1px solid #eaeaea;
+  position: fixed;
+  top: 0;
+  z-index: 500;
+}
+
