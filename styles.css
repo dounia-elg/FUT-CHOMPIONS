@@ -63,72 +63,70 @@ body {
 
 .player-card {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 15px;
-  background-color: #333;
-  background-image: url(imgs/000.png);
+  width: 100px;
+  height: 140px;
+  background-image: url(imgs/badge_gold.webp);
   background-size: cover;
-  border: 2px  #fff;
+ 
 }
 
 
 .goal {
-  top: 92%;
+  top: 82%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 
 .defender1 {
-  top: 70%;
+  top: 60%;
   left: 10%;
 }
 
 .defender2 {
-  top: 70%;
+  top: 60%;
   left: 30%;
 }
 
 .defender3 {
-  top: 70%;
+  top: 60%;
   left: 57%;
 }
 
 .defender4 {
-  top: 70%;
+  top: 60%;
   left: 77%;
 }
 
 
 .midfielder1 {
-  top: 50%;
+  top: 40%;
   left: 10%;
 }
 
 .midfielder2 {
-  top: 50%;
+  top: 40%;
   left: 30%;
 }
 
 .midfielder3 {
-  top: 50%;
+  top: 40%;
   left: 57%;
 }
 
 .midfielder4 {
-  top: 50%;
+  top: 40%;
   left: 77%;
 }
 
 
 .stirker1 {
-  top: 25%;
+  top: 15%;
   left: 30%;
 }
 
 .stirker2 {
-  top: 25%;
+  top: 15%;
   left: 57%;
 }
 
@@ -139,11 +137,8 @@ body {
 .sub5,
 .sub6 {
   position: static;
-  width: 80px;
-  height: 80px;
-  border-radius: 15%;
-  background-color: #444;
-  background-image: url(imgs/000.png);
+  width: 100px;
+  height: 140px;
+  background-image: url(imgs/badge_gold.webp);
   background-size: cover;
-  border: 2px solid #fff;
 }
