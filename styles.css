@@ -25,4 +25,19 @@ body {
 
 .main-content {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+
+.stadium {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  background: url(imgs/std.jpg) no-repeat center center;
+  background-size: cover;
+  height: 700px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
 }
