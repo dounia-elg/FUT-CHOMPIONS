@@ -77,7 +77,15 @@ body {
   height: 140px;
   background-image: url(imgs/badge_gold.webp);
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
  
+}
+
+.plus {
+  font-size: 45px;
+  color: rgb(46, 15, 132);
 }
 
 
@@ -146,8 +154,7 @@ body {
 .sub4,
 .sub5,
 .sub6,
-.sub7,
-.sub8 {
+.sub7 {
   position: static;
   width: 100px;
   height: 140px;
@@ -155,5 +162,20 @@ body {
   background-size: cover;
   
 }
+
+.players {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/******************************MODAL**********************/
+
+
+
+
+
+
 
 

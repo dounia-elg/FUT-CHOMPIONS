@@ -14,67 +14,128 @@
       <div class="stadium">
         <!------------- Player Cards --------------->
         <div class="players">
-            <div class="player-card goal"></div>
-            <div class="player-position">GK</div>
+            <div class="player-card goal">
+                <div class="plus">+</div>    
+            </div>
+            <h4 class="player-position"></h4>     
         </div>
         <div class="players">
-            <div class="player-card defender1"></div>
-            <div class="player-position">LB</div>
+            <div class="player-card defender1">
+                <div class="plus">+</div> 
+            </div>
+            <h4 class="player-position"></h4>
         </div>
         <div class="players">
-            <div class="player-card defender2"></div>
-            <div class="player-position">CB</div>
+            <div class="player-card defender2">
+                <div class="plus">+</div> 
+            </div>
+            <h4 class="player-position"></h4>
         </div>
         <div class="players">
-            <div class="player-card defender3"></div>
-            <div class="player-position">CB</div>
+            <div class="player-card defender3">
+                <div class="plus">+</div> 
+            </div>
+            <h4 class="player-position"></h4>
         </div>
         <div class="players">
-            <div class="player-card defender4"></div>
-            <div class="player-position">RB</div>
+            <div class="player-card defender4">
+                <div class="plus">+</div> 
+            </div>
+            <h4 class="player-position"></h4>
         </div>
         <div class="players">
-            <div class="player-card midfielder1"></div>
-            <div class="player-position">LW</div>
+            <div class="player-card midfielder1">
+                <div class="plus">+</div> 
+            </div>
+            <h4 class="player-position"></h4>
         </div>
         <div class="players">
-            <div class="player-card midfielder2"></div>
-            <div class="player-position">CM</div>
+            <div class="player-card midfielder2">
+                <div class="plus">+</div> 
+            </div>
+            <h4 class="player-position"></h4>
         </div>
         <div class="players">
-            <div class="player-card midfielder3"></div>
-            <div class="player-position">CM</div>
+            <div class="player-card midfielder3">
+                <div class="plus">+</div> 
+            </div>
+            <h4 class="player-position"></h4>
         </div>
         <div class="players">
-            <div class="player-card midfielder4"></div>
-            <div class="player-position">CM</div>
+            <div class="player-card midfielder4">
+                <div class="plus">+</div> 
+            </div>
+            <h4 class="player-position"></h4>
         </div>
         <div class="players">
-            <div class="player-card stirker1"></div>
-            <div class="player-position">ST</div>
+            <div class="player-card stirker1">
+                <div class="plus">+</div> 
+            </div>
+            <h4 class="player-position"></h4>
         </div>
         <div class="players">
-            <div class="player-card stirker2"></div>
-            <div class="player-position">RW</div>
+            <div class="player-card stirker2">
+                <div class="plus">+</div> 
+            </div>
+            <h4 class="player-position"></h4>
         </div>
       </div>
 
       <!------------------- Sidebar --------------->
       <div class="sidebar">
         <h2>Substitutes</h2>
-        <div class="player-card sub1"></div>
-        <div class="player-card sub2"></div>
-        <div class="player-card sub3"></div>
-        <div class="player-card sub4"></div>
-        <div class="player-card sub5"></div>
-        <div class="player-card sub6"></div>
-        <div class="player-card sub7"></div>
-        <div class="player-card sub8"></div>
+        <div class="sub">
+            <div class="player-card sub1">
+                <div class="plus">+</div>
+            </div>
+        </div>
+        <div class="sub">
+            <div class="player-card sub2">
+                <div class="plus">+</div>
+            </div>
+        </div>
+        <div class="sub">
+            <div class="player-card sub3">
+                <div class="plus">+</div>
+            </div>
+        </div>
+        <div class="sub">
+            <div class="player-card sub4">
+                <div class="plus">+</div>
+            </div>
+        </div>
+        <div class="sub">
+            <div class="player-card sub5">
+                <div class="plus">+</div>
+            </div>
+        </div>
+        <div class="sub">
+            <div class="player-card sub6">
+                <div class="plus">+</div>
+            </div>
+        </div>
+        <div class="sub">
+            <div class="player-card sub7">
+                <div class="plus">+</div>
+            </div>
+        </div>
+        
         
       </div>
 
     </div>
   </div>
+
+  <!---------------------MODAL-------------------------->
+  <div id="player-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Player Details</h2>
+      <div id="players-list"></div>
+    </div>
+  </div>
+  
+  
 
   <script src="script.js"></script>
 </body>
