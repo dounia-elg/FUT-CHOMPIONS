@@ -55,6 +55,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 2px;
   align-items: center;
+  width: 20%;
 }
 
 .sidebar h2 {
@@ -63,12 +64,31 @@ body {
   color: white;
   margin-bottom: 10px;
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: -10px;
 }
 
 .sidebar .player-card {
   margin: 10px auto;
   
   
+}
+
+.sidebar .All {
+  grid-column: span 2;
+  width: 200px;
+  height: 50px;
+  border-radius: 10%;
+  font-size: 20px;
+  margin-left: 13%;
+  color: white;
+  background-color: rgb(46, 15, 132);
+  border: none;
+ 
+}
+
+.All:hover{
+  background-color: rgb(189, 174, 86);
 }
 
 .player-card {
@@ -80,6 +100,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
  
 }
 
@@ -88,62 +109,66 @@ body {
   color: rgb(46, 15, 132);
 }
 
+.position {
+  color: rgb(46, 15, 132);
+}
 
-.goal {
+
+#goal {
   top: 88%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 
-.defender1 {
+#defender1 {
   top: 60%;
   left: 10%;
 }
 
-.defender2 {
+#defender2 {
   top: 60%;
   left: 30%;
 }
 
-.defender3 {
+#defender3 {
   top: 60%;
   left: 57%;
 }
 
-.defender4 {
+#defender4 {
   top: 60%;
   left: 77%;
 }
 
 
-.midfielder1 {
+#midfielder1 {
   top: 40%;
   left: 10%;
 }
 
-.midfielder2 {
+#midfielder2 {
   top: 40%;
   left: 30%;
 }
 
-.midfielder3 {
+#midfielder3 {
   top: 40%;
   left: 57%;
 }
 
-.midfielder4 {
+#midfielder4 {
   top: 40%;
   left: 77%;
 }
 
 
-.stirker1 {
+#stirker1 {
   top: 15%;
   left: 30%;
 }
 
-.stirker2 {
+#stirker2 {
   top: 15%;
   left: 57%;
 }
@@ -169,6 +194,8 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+
 
 /******************************MODAL**********************/
 .modal {
