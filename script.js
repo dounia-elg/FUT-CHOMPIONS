@@ -17,14 +17,15 @@ fetch('players.json')
         players.forEach(player => {
           const playerDiv = document.createElement('div');
           playerDiv.innerHTML = `
-            <div style="text-align: left; margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
-              <h3>${player.name}</h3>
-              <img src="${player.photo}" alt="${player.name}" style="width: 100px; height: auto; border-radius: 5px;">
-              <p><strong>Position:</strong> ${player.position}</p>
-              <p><strong>Nationality:</strong> ${player.nationality} <img src="${player.flag}" alt="${player.nationality}" style="width: 20px; height: auto;"></p>
-              <p><strong>Club:</strong> ${player.club} <img src="${player.logo}" alt="${player.club}" style="width: 20px; height: auto;"></p>
-              <p><strong>Rating:</strong> ${player.rating}</p>
-              
+            <div style="display: grid; columns: 2; justify-content: center ; align-items: center ">
+                <div style="text-align: center; margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: gold ">
+                    <h3>${player.name}</h3>
+                    <img src="${player.photo}" alt="${player.name}" style="width: 100px; height: auto; border-radius: 5px;">
+                    <p><strong>Position:</strong> ${player.position}</p>
+                    <p><strong>Nationality:</strong> ${player.nationality} <img src="${player.flag}" alt="${player.nationality}" style="width: 20px; height: auto;"></p>
+                    <p><strong>Club:</strong> ${player.club} <img src="${player.logo}" alt="${player.club}" style="width: 20px; height: auto;"></p>
+                    <p><strong>Rating:</strong> ${player.rating}</p>
+                </div>
             </div>
           `;
           playersList.appendChild(playerDiv);
