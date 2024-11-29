@@ -1,24 +1,22 @@
-// const { log } = require("console");
 
-// Get the modal and close button elements
 const modal = document.getElementById('playersModal');
 const closeModalButton = document.getElementById('closeModal');
 const playersList = document.getElementById('playersList');
 
-// Function to show the modal
+
 function openModal(e) {
     modal.classList.remove('hidden'); 
     modal.classList.add('flex'); 
     fetchPlayers(e); 
 }
 
-// Function to close the modal
+
 function closeModal() {
     modal.classList.add('hidden'); 
     modal.classList.remove('flex'); 
 }
 
-// Event listener for opening the modal
+
 document.querySelectorAll('.plus').forEach(button => {
     button.addEventListener('click', (e) => {
         openModal(e);
@@ -30,7 +28,7 @@ closeModalButton.addEventListener('click', () => {
     closeModal();
 });
 
-// Function to fetch players data from the JSON file
+
 function fetchPlayers(e) {
 
     
@@ -52,7 +50,8 @@ function fetchPlayers(e) {
 
                 playerCard.addEventListener('click', () => {
                     selectPlayer(player,e);
-                    closeModal(); // Close the modal when a player is selected
+                    closeModal(); 
+                    
                 });
 
                 playersList.appendChild(playerCard);
@@ -71,7 +70,8 @@ function selectPlayer(player, event) {
     const clickedCardOnField = event.target.closest('.player-card');
     console.log('Clicked card:', clickedCardOnField);
 
-    // Update the clicked card with the selected player details
+    
+    
     clickedCardOnField.innerHTML = `
         <img src="${player.photo}" alt="${player.name}" class="w-32 h-32 object-cover rounded-full">
         <p class="mt-2">${player.name}</p>
