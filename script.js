@@ -81,3 +81,43 @@ function selectPlayer(player, event) {
 }
 
 
+
+/******************************Player Form Modal********************************** */
+
+const addPlayerButton = document.getElementById('addPlayer');
+const playerFormModal = document.getElementById('playerFormModal');
+const cancelFormButton = document.getElementById('cancelForm');
+const playerForm = document.getElementById('playerForm');
+
+function openPlayerForm() {
+  playerFormModal.classList.remove('hidden');
+}
+
+function closePlayerForm() {
+  playerFormModal.classList.add('hidden');
+}
+
+addPlayerButton.addEventListener('click', openPlayerForm);
+cancelFormButton.addEventListener('click', closePlayerForm);
+
+playerForm.addEventListener('submit', (e) => {
+  e.preventDefault(); 
+
+  const newPlayer = {
+    image: document.getElementById('playerImage').value,
+    name: document.getElementById('playerName').value,
+    rating: document.getElementById('playerRating').value,
+    position: document.getElementById('playerPosition').value,
+    club: document.getElementById('playerClub').value,
+  };
+
+  console.log('New Player:', newPlayer);
+
+  playerForm.reset();
+
+  closePlayerForm();
+
+});
+
+
+
