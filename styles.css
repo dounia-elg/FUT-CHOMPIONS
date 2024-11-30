@@ -100,11 +100,17 @@ body {
 
 .plus {
   font-size: 45px;
-  color: rgb(46, 15, 132);
+  color: rgb(2, 123, 2);
+}
+
+.plus:hover {
+  color: rgb(2, 64, 2);
 }
 
 .position {
-  color: rgb(46, 15, 132);
+  font-family: bold;
+  font-size: 20px;
+  color: rgb(2, 123, 2);
 }
 
 
