@@ -84,10 +84,8 @@ function selectPlayer(player, event) {
 
 /******************************Player Form Modal********************************** */
 
-const addPlayerButton = document.getElementById('addPlayer');
-const playerFormModal = document.getElementById('playerFormModal');
-const cancelFormButton = document.getElementById('cancelForm');
 const playerForm = document.getElementById('playerForm');
+const playerFormModal = document.getElementById('playerFormModal');
 
 function openPlayerForm() {
   playerFormModal.classList.remove('hidden');
@@ -97,27 +95,32 @@ function closePlayerForm() {
   playerFormModal.classList.add('hidden');
 }
 
-addPlayerButton.addEventListener('click', openPlayerForm);
-cancelFormButton.addEventListener('click', closePlayerForm);
+document.getElementById('addPlayer').addEventListener('click', openPlayerForm);
+
+document.getElementById('cancelForm').addEventListener('click', closePlayerForm);
 
 playerForm.addEventListener('submit', (e) => {
   e.preventDefault(); 
 
-  const newPlayer = {
-    image: document.getElementById('playerImage').value,
-    name: document.getElementById('playerName').value,
-    rating: document.getElementById('playerRating').value,
-    position: document.getElementById('playerPosition').value,
-    club: document.getElementById('playerClub').value,
-  };
+  if (playerForm.checkValidity()) {
+    const newPlayer = {
+      image: document.getElementById('playerImage').value,
+      name: document.getElementById('playerName').value,
+      rating: document.getElementById('playerRating').value,
+      position: document.getElementById('playerPosition').value,
+      club: document.getElementById('playerClub').value,
+    };
 
-  console.log('New Player:', newPlayer);
+    console.log('New Player Details:', newPlayer);
 
-  playerForm.reset();
+    playerForm.reset();
 
-  closePlayerForm();
-
+    closePlayerForm();
+  } else {
+    playerForm.reportValidity();
+  }
 });
+
 
 
 

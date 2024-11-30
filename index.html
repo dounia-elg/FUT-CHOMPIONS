@@ -164,26 +164,26 @@
       <div id="playerFormModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
         <div class="bg-white w-11/12 max-w-md p-6 rounded-lg">
           <h2 class="text-xl font-bold mb-4">Add New Player</h2>
-          <form id="playerForm" class="space-y-4">
+          <form id="playerForm" class="space-y-4" novalidate>
             <div>
               <label for="playerImage" class="block font-bold">Image URL:</label>
-              <input type="text" id="playerImage" class="w-full border border-gray-300 rounded p-2">
+              <input type="url" id="playerImage" class="w-full border border-gray-300 rounded p-2" required >
             </div>
             <div>
               <label for="playerName" class="block font-bold">Name:</label>
-              <input type="text" id="playerName" class="w-full border border-gray-300 rounded p-2">
+              <input type="text" id="playerName" class="w-full border border-gray-300 rounded p-2" required  minlength="2">
             </div>
             <div>
               <label for="playerRating" class="block font-bold">Rating:</label>
-              <input type="number" id="playerRating" class="w-full border border-gray-300 rounded p-2">
+              <input type="number" id="playerRating" class="w-full border border-gray-300 rounded p-2" required min="1" max="100" >
             </div>
             <div>
               <label for="playerPosition" class="block font-bold">Position:</label>
-              <input type="text" id="playerPosition" class="w-full border border-gray-300 rounded p-2">
+              <input type="text" id="playerPosition" class="w-full border border-gray-300 rounded p-2" required  minlength="2">
             </div>
             <div>
               <label for="playerClub" class="block font-bold">Club:</label>
-              <input type="text" id="playerClub" class="w-full border border-gray-300 rounded p-2">
+              <input type="text" id="playerClub" class="w-full border border-gray-300 rounded p-2" required  minlength="2">
             </div>
             <div class="flex justify-end">
               <button type="button" id="cancelForm" class="bg-red-500 text-white px-4 py-2 rounded mr-2">Cancel</button>
