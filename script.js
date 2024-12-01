@@ -179,3 +179,10 @@ function addNewPlayerCard(newPlayerDetails) {
   
   // Call the function to add the new player card to the player list
   addNewPlayerCard(newPlayerDetails);
+
+
+
+
+
+
+  
