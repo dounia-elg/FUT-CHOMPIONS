@@ -39,7 +39,7 @@ function fetchPlayers(e) {
                 const playerCard = document.createElement('div');
                 playerCard.classList.add('player-card2');
                 playerCard.innerHTML = `
-                    <img src="${player.photo}" alt="${player.name}" class="w-32 h-32 object-cover rounded-full">
+                    <img src="${player.photo}" alt="${player.name}" class="w-24 h-24 object-cover rounded-full">
                     <p class="mt-2 name">${player.name}</p>
                     <p>Rating: ${player.rating}</p>
                     <p>Position: ${player.position}</p>
