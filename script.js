@@ -39,11 +39,11 @@ function fetchPlayers(e) {
                 const playerCard = document.createElement('div');
                 playerCard.classList.add('player-card2');
                 playerCard.innerHTML = `
-                    <img src="${player.photo}" alt="${player.name}" class="w-24 h-24 object-cover rounded-full">
-                    <p class="mt-2 name">${player.name}</p>
-                    <p>Rating: ${player.rating}</p>
-                    <p>Position: ${player.position}</p>
-                    <p>Club: ${player.club}</p>
+                    <p class=" mt-7 ml-4 text-sm font-bold name">${player.name}</p>
+                    <img src="${player.photo}" alt="${player.name}" class="w-28 h-28 ml-4 ">
+                    <p class="text-gray-700 ml-4">Rating: ${player.rating}</p>
+                    <p class="text-gray-700 ml-4"Position> ${player.position}</p>
+                    <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${player.club}</p>
                 `;
 
                 playerCard.addEventListener('click', () => {
@@ -68,9 +68,9 @@ function selectPlayer(player, event) {
     console.log('Clicked card:', clickedCardOnField);
 
     clickedCardOnField.innerHTML = `
-        <img src="${player.photo}" alt="${player.name}" class="w-32 h-32 object-cover rounded-full">
-        <p class="mt-2">${player.name}</p>
-        <p>Rating: ${player.rating}</p>
+        <img src="${player.photo}" alt="${player.name}" class="w-16 h-16 mt-4">
+        <p class="mt-2 text-[8px]">${player.name}</p>
+        <p class=" text-sm ">${player.rating}</p>
         
     `;
 }
