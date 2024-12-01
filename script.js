@@ -131,11 +131,11 @@ function addPlayerToModal(player) {
       playerCard.classList.add('player-card2'); 
   
       playerCard.innerHTML = `
-        <img src="${player.image}" alt="${player.name}" class="w-32 h-32 object-cover rounded-full ">
-        <p class="mt-2">${player.name}</p>
-        <p>Rating: ${player.rating}</p>
-        <p>Position: ${player.position}</p>
-        <p>Club: ${player.club}</p>
+        <p class=" mt-7 ml-4 text-sm font-bold name">${player.name}</p>
+        <img src="${player.photo}" alt="${player.name}" class="w-28 h-28 ml-4 ">
+        <p class="text-gray-700 ml-4">Rating: ${player.rating}</p>
+        <p class="text-gray-700 ml-4"Position> ${player.position}</p>
+        <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${player.club}</p>
       `;
   
       console.log('Current players list:', playersList.innerHTML);
@@ -163,11 +163,11 @@ function addNewPlayerCard(newPlayerDetails) {
   
     const playerCard = `
       <div class="player-card2">
-        <img src="${newPlayerDetails.image}" alt="${newPlayerDetails.name}" class="w-32 h-32 object-cover rounded-full">
-        <p class="mt-2">${newPlayerDetails.name}</p>
-        <p>Rating: ${newPlayerDetails.rating}</p>
-        <p>Position: ${newPlayerDetails.position}</p>
-        <p>Club: ${newPlayerDetails.club}</p>
+        <p class=" mt-7 ml-4 text-sm font-bold name">${player.name}</p>
+        <img src="${player.photo}" alt="${player.name}" class="w-28 h-28 ml-4 ">
+        <p class="text-gray-700 ml-4">Rating: ${player.rating}</p>
+        <p class="text-gray-700 ml-4"Position> ${player.position}</p>
+        <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${player.club}</p>
       </div>
     `;
   
