@@ -17,7 +17,7 @@ function closeModal() {
     modal.classList.remove('flex'); 
 }
 
-document.querySelectorAll('.plus').forEach(button => {
+document.querySelectorAll('.player-card').forEach(button => {
     button.addEventListener('click', (e) => {
         openModal(e);
     });
@@ -84,14 +84,12 @@ const playerFormModal = document.getElementById('playerFormModal');
   
 
 function openPlayerForm() {
-  console.log("Opening player form modal...");
   playerFormModal.classList.remove('hidden');
-  playerFormModal.classList.add('flex');  // Ensure modal is visible
+  playerFormModal.classList.add('flex');  
 }
 
 
 function closePlayerForm() {
-  console.log("Closing player form modal...");
   playerFormModal.classList.add('hidden');
   playerFormModal.classList.remove('flex'); 
 }
@@ -124,8 +122,7 @@ playerForm.addEventListener('submit', (e) => {
 
 
 function addPlayerToModal(player) {
-    console.log("Adding new player card to the modal...");
-  
+    
     if (playersList) {
       const playerCard = document.createElement('div');
       playerCard.classList.add('player-card2'); 
@@ -137,29 +134,17 @@ function addPlayerToModal(player) {
         <p class="text-gray-700 ml-4"Position> ${player.position}</p>
         <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${player.club}</p>
       `;
-  
-      console.log('Current players list:', playersList.innerHTML);
-      
+
       playersList.appendChild(playerCard);
   
       playersList.offsetHeight; 
 
-      console.log("Player card added to the modal");
-  
-      console.log('Updated players list:', playersList.innerHTML);
-    } else {
-      console.error('playersList is not found!');
-    }
+    } 
   }
 
 
 function addNewPlayerCard(newPlayerDetails) {
     const playersList = document.querySelector('#playerslist');
-  
-    if (!playersList) {
-      console.error('Player list container not found!');
-      return;
-    }
   
     const playerCard = `
       <div class="player-card2">
@@ -173,11 +158,8 @@ function addNewPlayerCard(newPlayerDetails) {
   
     playersList.innerHTML += playerCard;
   
-    console.log('New player card added to the player list');
   }
   
-  
-  // Call the function to add the new player card to the player list
   addNewPlayerCard(newPlayerDetails);
 
 
