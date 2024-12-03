@@ -1,4 +1,8 @@
 
+
+
+const newPlayer = [];
+
 const modal = document.getElementById('playersModal');
 const closeModalButton = document.getElementById('closeModal');
 const playersList = document.getElementById('playersList');
@@ -32,11 +36,14 @@ function fetchPlayers(e) {
 
     fetch('players.json')
         .then(response => response.json())
-        .then(data => {
+        .then(function(data){
+
             const players = data.players; 
             playersList.innerHTML = ''; 
-            players.forEach(player => {
-                const playerCard = document.createElement('div');
+
+            players.forEach(function(player) {
+              const playerCard = document.createElement('div');
+
                 playerCard.classList.add('player-card2');
                 playerCard.innerHTML = `
                     <p class=" mt-7 ml-4 text-sm font-bold name">${player.name}</p>
@@ -54,6 +61,32 @@ function fetchPlayers(e) {
 
                 playersList.appendChild(playerCard);
             });
+
+            newPlayer.forEach(function(item) {
+              const playerTest = document.createElement('div');
+
+              playerTest.classList.add('player-card2');
+              playerTest.innerHTML = `
+                  <p class=" mt-7 ml-4 text-sm font-bold name">${item.name}</p>
+                  <img src="${item.photo}" alt="${item.name}" class="w-28 h-28 ml-4 ">
+                  <p class="text-gray-700 ml-4">Rating: ${item.rating}</p>
+                  <p class="text-gray-700 ml-4"Position> ${item.position}</p>
+                  <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${item.club}</p>
+              `;
+
+              playerTest.addEventListener('click', () => {
+                  selectPlayer(item,e);
+                  closeModal(); 
+                  
+              });
+
+              playersList.appendChild(playerTest);
+          });
+
+
+
+
+            
         })
         .catch(error => {
             console.error('Error fetching players:', error);
@@ -101,46 +134,28 @@ playerForm.addEventListener('submit', (e) => {
   e.preventDefault(); 
 
   if (playerForm.checkValidity()) {
-    const newPlayer = {
+     const getPlayer = {
       image: document.getElementById('playerImage').value,
       name: document.getElementById('playerName').value,
       rating: document.getElementById('playerRating').value,
       position: document.getElementById('playerPosition').value,
       club: document.getElementById('playerClub').value,
     };
+    
+    newPlayer.push(getPlayer);
 
-    console.log('New Player Details:', newPlayer); 
+    console.log('New Player Details:', getPlayer); 
 
-    addPlayerToModal(newPlayer);
+    // addPlayerToModal(getPlayer);
 
     playerForm.reset();
     closePlayerForm();
+    console.log(newPlayer);
+
   } else {
     playerForm.reportValidity();  
   }
 });
-
-
-function addPlayerToModal(player) {
-    
-    if (playersList) {
-      const playerCard = document.createElement('div');
-      playerCard.classList.add('player-card2'); 
-  
-      playerCard.innerHTML = `
-        <p class=" mt-7 ml-4 text-sm font-bold name">${player.name}</p>
-        <img src="${player.photo}" alt="${player.name}" class="w-28 h-28 ml-4 ">
-        <p class="text-gray-700 ml-4">Rating: ${player.rating}</p>
-        <p class="text-gray-700 ml-4"Position> ${player.position}</p>
-        <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${player.club}</p>
-      `;
-
-      playersList.appendChild(playerCard);
-  
-      playersList.offsetHeight; 
-
-    } 
-  }
 
 
 function addNewPlayerCard(newPlayerDetails) {
@@ -162,6 +177,18 @@ function addNewPlayerCard(newPlayerDetails) {
   
   addNewPlayerCard(newPlayerDetails);
 
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
