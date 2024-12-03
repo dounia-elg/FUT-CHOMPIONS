@@ -101,7 +101,7 @@ body {
 
 
 .plus {
-  font-size: 45px;
+  font-size: 55px;
   color: rgb(2, 123, 2);
 }
 
@@ -109,11 +109,6 @@ body {
   color: rgb(2, 64, 2);
 }
 
-.position {
-  font-family: bold;
-  font-size: 20px;
-  color: rgb(2, 123, 2);
-}
 
 
 #goal {

@@ -3,16 +3,25 @@
 
 const newPlayer = [];
 
+
 const modal = document.getElementById('playersModal');
 const closeModalButton = document.getElementById('closeModal');
 const playersList = document.getElementById('playersList');
+const removePlayer = document.getElementById("removePlayer");
 
 
-function openModal(e) {
+function openModal(e,position) {
     modal.classList.remove('hidden'); 
     modal.classList.add('flex'); 
+
+    removePlayer.addEventListener("click",()=>{
+      let content1;
+      selectPlayer(content1,e);
+      modal.classList.add('hidden'); 
+    modal.classList.remove('flex'); 
+    })
     
-    fetchPlayers(e); 
+    fetchPlayers(e, position); 
 }
 
 
@@ -21,9 +30,33 @@ function closeModal() {
     modal.classList.remove('flex'); 
 }
 
-document.querySelectorAll('.player-card').forEach(button => {
+document.querySelectorAll('.player-card').forEach((button,index) => {
     button.addEventListener('click', (e) => {
-        openModal(e);
+      let position;
+      if(index === 0){
+        position = "GK";
+      }else if(index === 1){
+        position = "LB";
+      }else if(index === 2){
+        position = "CB";
+      }else if(index === 3){
+        position = "CB";
+      }else if(index === 4){
+        position = "RB";
+      }else if(index === 5){
+        position = "LM";
+      }else if(index === 6){
+        position = "CM";
+      }else if(index === 7){
+        position = "CM";
+      }else if(index === 8){
+        position = "RM";
+      }else if(index === 9){
+        position = "ST";
+      }else if(index === 10){
+        position = "ST";
+      }
+        openModal(e,position);
     });
 });
 
@@ -32,7 +65,7 @@ closeModalButton.addEventListener('click', () => {
 });
 
 
-function fetchPlayers(e) {
+function fetchPlayers(e,getPosition) {
 
     fetch('players.json')
         .then(response => response.json())
@@ -42,47 +75,109 @@ function fetchPlayers(e) {
             playersList.innerHTML = ''; 
 
             players.forEach(function(player) {
-              const playerCard = document.createElement('div');
 
-                playerCard.classList.add('player-card2');
-                playerCard.innerHTML = `
-                    <p class=" mt-7 ml-4 text-sm font-bold name">${player.name}</p>
-                    <img src="${player.photo}" alt="${player.name}" class="w-28 h-28 ml-4 ">
-                    <p class="text-gray-700 ml-4">Rating: ${player.rating}</p>
-                    <p class="text-gray-700 ml-4"Position> ${player.position}</p>
-                    <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${player.club}</p>
-                `;
 
-                playerCard.addEventListener('click', () => {
-                    selectPlayer(player,e);
-                    closeModal(); 
-                    
-                });
+              if(getPosition){
+                if(player.position == getPosition){
+                  const playerCard = document.createElement('div');
+  
+                  playerCard.classList.add('player-card2');
+                  playerCard.innerHTML = `
+                      <p class=" mt-7 ml-4 text-sm font-bold name">${player.name}</p>
+                      <img src="${player.photo}" alt="${player.name}" class="w-28 h-28 ml-4 ">
+                      <p class="text-gray-700 ml-4">Rating: ${player.rating}</p>
+                      <p class="text-gray-700 ml-4"Position> ${player.position}</p>
+                      <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${player.club}</p>
+                  `;
+  
+                  playerCard.addEventListener('click', () => {
+                      selectPlayer(player,e);
+                      closeModal(); 
+                      
+                  });
+  
+                  playersList.appendChild(playerCard);
+                }
+              }else{
+                  const playerCard = document.createElement('div');
+  
+                  playerCard.classList.add('player-card2');
+                  playerCard.innerHTML = `
+                      <p class=" mt-7 ml-4 text-sm font-bold name">${player.name}</p>
+                      <img src="${player.photo}" alt="${player.name}" class="w-28 h-28 ml-4 ">
+                      <p class="text-gray-700 ml-4">Rating: ${player.rating}</p>
+                      <p class="text-gray-700 ml-4"Position> ${player.position}</p>
+                      <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${player.club}</p>
+                  `;
+  
+                  playerCard.addEventListener('click', () => {
+                      selectPlayer(player,e);
+                      closeModal(); 
+                      
+                  });
+  
+                  playersList.appendChild(playerCard);
+                
+              }
+              
 
-                playersList.appendChild(playerCard);
+
+
+              
             });
 
             newPlayer.forEach(function(item) {
-              const playerTest = document.createElement('div');
 
-              playerTest.classList.add('player-card2');
-              playerTest.innerHTML = `
-                  <p class=" mt-7 ml-4 text-sm font-bold name">${item.name}</p>
-                  <img src="${item.photo}" alt="${item.name}" class="w-28 h-28 ml-4 ">
-                  <p class="text-gray-700 ml-4">Rating: ${item.rating}</p>
-                  <p class="text-gray-700 ml-4"Position> ${item.position}</p>
-                  <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${item.club}</p>
-              `;
+              if(getPosition){
+                if(item.position == getPosition){
+                  const playerTest = document.createElement('div');
+  
+                  playerTest.classList.add('player-card2');
+                  playerTest.innerHTML = `
+                      <p class=" mt-7 ml-4 text-sm font-bold name">${item.name}</p>
+                      <img src="${item.photo}" alt="${item.name}" class="w-28 h-28 ml-4 ">
+                      <p class="text-gray-700 ml-4">Rating: ${item.rating}</p>
+                      <p class="text-gray-700 ml-4"Position> ${item.position}</p>
+                      <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${item.club}</p>
+                  `;
+    
+                  playerTest.addEventListener('click', () => {
+                      selectPlayer(item,e);
+                      closeModal(); 
+                      
+                  });
+    
+    
+                  playersList.appendChild(playerTest);
+                }
+              }else{
+                const playerTest = document.createElement('div');
 
-              playerTest.addEventListener('click', () => {
-                  selectPlayer(item,e);
-                  closeModal(); 
-                  
-              });
+                playerTest.classList.add('player-card2');
+                playerTest.innerHTML = `
+                    <p class=" mt-7 ml-4 text-sm font-bold name">${item.name}</p>
+                    <img src="${item.photo}" alt="${item.name}" class="w-28 h-28 ml-4 ">
+                    <p class="text-gray-700 ml-4">Rating: ${item.rating}</p>
+                    <p class="text-gray-700 ml-4"Position> ${item.position}</p>
+                    <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${item.club}</p>
+                `;
+  
+                playerTest.addEventListener('click', () => {
+                    selectPlayer(item,e);
+                    closeModal(); 
+                    
+                });
+  
+  
+                playersList.appendChild(playerTest);
+              
+              }
+              
 
-              playersList.appendChild(playerTest);
+              
           });
 
+          
 
 
 
@@ -94,18 +189,32 @@ function fetchPlayers(e) {
 }
 
 
-function selectPlayer(player, event) {
-    console.log('Selected player:', player);
+function removePlayers(element){
+  let getElement = element.target;
+  getElement.innerHTML = ``;
+}
 
-    const clickedCardOnField = event.target.closest('.player-card');
-    console.log('Clicked card:', clickedCardOnField);
+
+function selectPlayer(player, event) {
+  
+ 
+  const clickedCardOnField = event.target.closest('.player-card');
+
+    
+
+  if(!player){
+    clickedCardOnField.innerHTML = `<button class="plus">+</button>  `;
+  }else{
 
     clickedCardOnField.innerHTML = `
-        <img src="${player.photo}" alt="${player.name}" class="w-16 h-16 mt-4">
-        <p class="mt-2 text-[8px]">${player.name}</p>
-        <p class=" text-sm ">${player.rating}</p>
-        
-    `;
+    <img src="${player.photo}" alt="${player.name}" class="w-16 h-16 mt-4">
+    <p class="mt-2 text-[8px]">${player.name}</p>
+    <p class=" text-sm ">${player.rating}</p>
+    
+`;
+  }
+    
+    
 }
 
 
@@ -146,8 +255,7 @@ playerForm.addEventListener('submit', (e) => {
 
     console.log('New Player Details:', getPlayer); 
 
-    // addPlayerToModal(getPlayer);
-
+  
     playerForm.reset();
     closePlayerForm();
     console.log(newPlayer);
@@ -156,26 +264,6 @@ playerForm.addEventListener('submit', (e) => {
     playerForm.reportValidity();  
   }
 });
-
-
-function addNewPlayerCard(newPlayerDetails) {
-    const playersList = document.querySelector('#playerslist');
-  
-    const playerCard = `
-      <div class="player-card2">
-        <p class=" mt-7 ml-4 text-sm font-bold name">${player.name}</p>
-        <img src="${player.photo}" alt="${player.name}" class="w-28 h-28 ml-4 ">
-        <p class="text-gray-700 ml-4">Rating: ${player.rating}</p>
-        <p class="text-gray-700 ml-4"Position> ${player.position}</p>
-        <p class="text-gray-700 ml-4 text-sm mb-2"Club> ${player.club}</p>
-      </div>
-    `;
-  
-    playersList.innerHTML += playerCard;
-  
-  }
-  
-  addNewPlayerCard(newPlayerDetails);
 
 
 
