@@ -1,8 +1,5 @@
 
-
-
 const newPlayer = [];
-
 
 const modal = document.getElementById('playersModal');
 const closeModalButton = document.getElementById('closeModal');
