@@ -15,7 +15,7 @@ function openModal(e,position) {
       let content1;
       selectPlayer(content1,e);
       modal.classList.add('hidden'); 
-    modal.classList.remove('flex'); 
+      modal.classList.remove('flex'); 
     })
     
     fetchPlayers(e, position); 
@@ -29,6 +29,7 @@ function closeModal() {
 
 document.querySelectorAll('.player-card').forEach((button,index) => {
     button.addEventListener('click', (e) => {
+      console.log(e)
       let position;
       if(index === 0){
         position = "GK";
